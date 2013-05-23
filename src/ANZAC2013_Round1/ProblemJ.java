@@ -1,8 +1,9 @@
 package ANZAC2013_Round1;
 
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Scanner;
-import java.util.TreeSet;
 
 /**
  *
@@ -19,22 +20,32 @@ public class ProblemJ {
             int N = sc.nextInt();
             sc.nextLine();
 
-            LinkedList<TreeSet<String>> networks = new LinkedList<TreeSet<String>>();
+//            LinkedList<HashSet<String>> networks = new LinkedList<HashSet<String>>();
+            HashSet<HashSet<String>> networks = new HashSet<HashSet<String>>();
 
             for (int n = 0; n < N; n++) {
                 String input = sc.nextLine();
                 String name1 = input.split(" ")[0];
                 String name2 = input.split(" ")[1];
 
-                TreeSet<String> joinedNetwork = new TreeSet<String>();
+                HashSet<String> joinedNetwork = new HashSet<String>();
 
-                for (int i = 0; i < networks.size(); i++) {
-                    TreeSet<String> net = networks.get(i);
-
+//                for (int i = 0; i < networks.size(); i++) {
+//                    HashSet<String> net = networks.get(i);
+//
+//                    if (net.contains(name1) || net.contains(name2)) {
+//                        joinedNetwork.addAll(net);
+//                        networks.remove(net);
+//                        i--;
+//                    }
+//                }
+                
+                Iterator<HashSet<String>> itr = networks.iterator();
+                while (itr.hasNext()) {
+                    HashSet<String> net = itr.next();
                     if (net.contains(name1) || net.contains(name2)) {
                         joinedNetwork.addAll(net);
-                        networks.remove(net);
-                        i--;
+                        itr.remove();
                     }
                 }
 

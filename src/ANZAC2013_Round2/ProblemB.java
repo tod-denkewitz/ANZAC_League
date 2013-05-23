@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Tod
+ * @author Tod and Luke
  */
 public class ProblemB {
 
