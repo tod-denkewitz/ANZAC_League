@@ -41,12 +41,13 @@ build/
 core
 nbbuild/
 nbdist/
-nbproject/*
-!nbproject/project.properties
-!nbproject/project.xml
+nbproject/
 nbactions.xml
 nb-configuration.xml
- 
+
+!nbproject/project.properties
+!nbproject/project.xml
+
 # Java specific
 *.class
 *.jar
